@@ -5,7 +5,7 @@ from .locators import BasketPageLocators
 class BasketPage(BasePage):
     def should_be_basket_url(self):
         assert "basket" in self.browser.current_url
-        
+
     def should_be_empty_basket(self):
         assert self.is_not_element_present(*BasketPageLocators.PRODUCTS_LIST), \
             "Products list is presented, but should not be"
