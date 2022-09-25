@@ -8,4 +8,4 @@ Test Automation using Pytest and Selenium WebDriver
 
 ## Run
 
-pytest -v --reruns=1 --tb=line --language=en -m need_review
+pytest -v --tb=line --language=en -m need_review
