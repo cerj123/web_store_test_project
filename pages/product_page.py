@@ -24,3 +24,11 @@ class ProductPage(BasePage):
         #should_be_message = "Your basket total is now " + product_price
         basket_value_alert = self.browser.find_element(*ProductPageLocators.BASKET_VALUE).text
         assert basket_value_alert.find(product_price) != -1, f"expected '{product_price}' to be substring of '{basket_value_alert}'"
+    
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_dissapear_of_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is not dissapeared"
